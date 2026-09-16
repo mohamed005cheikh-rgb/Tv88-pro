@@ -11,19 +11,30 @@ accounts, no tracking, no noise.
 
 ---
 
-## Preview
+## Demo
 
 <p align="center">
-  <a href="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Promo.mp4">
-    <img src="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Sc1.jpg" width="600" alt="Télé 88 — Watch demo">
-  </a>
+  <img src="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/demo.gif" width="600" alt="Télé 88 demo">
 </p>
 
-<p align="center">
-  <img src="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Sc1.jpg" width="32%" alt="Screenshot 1">
-  <img src="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Sc2.jpg" width="32%" alt="Screenshot 2">
-  <img src="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Sc3.jpg" width="32%" alt="Screenshot 3">
-</p>
+---
+
+## Themes
+
+<table align="center">
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Sc2.jpg" width="100%" alt="Paper theme">
+      <br>
+      <sub><b>Paper</b> · Light mode</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Sc3.jpg" width="100%" alt="Night theme">
+      <br>
+      <sub><b>Night</b> · Dark mode</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
