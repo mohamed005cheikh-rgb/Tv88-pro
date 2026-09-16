@@ -14,13 +14,15 @@ accounts, no tracking, no noise.
 ## Preview
 
 <p align="center">
-  <video src="assets/Promo.mp4" width="600" controls muted playsinline></video>
+  <a href="https://raw.githubusercontent.com/mohamed005cheikh-rgb/Tv88-pro/main/assets/Promo.mp4">
+    <img src="https://raw.githubusercontent.com/mohamed005cheikh-rgb/Tv88-pro/main/assets/Sc1.jpg" width="600" alt="Télé 88 — Watch demo">
+  </a>
 </p>
 
 <p align="center">
-  <img src="assets/Sc1.jpg" alt="Screenshot 1" width="32%">
-  <img src="assets/Sc2.jpg" alt="Screenshot 2" width="32%">
-  <img src="assets/Sc3.jpg" alt="Screenshot 3" width="32%">
+  <img src="https://raw.githubusercontent.com/mohamed005cheikh-rgb/Tv88-pro/main/assets/Sc1.jpg" width="32%" alt="Screenshot 1">
+  <img src="https://raw.githubusercontent.com/mohamed005cheikh-rgb/Tv88-pro/main/assets/Sc2.jpg" width="32%" alt="Screenshot 2">
+  <img src="https://raw.githubusercontent.com/mohamed005cheikh-rgb/Tv88-pro/main/assets/Sc3.jpg" width="32%" alt="Screenshot 3">
 </p>
 
 ---
