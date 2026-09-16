@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="paper">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ede2c8">
+<title>Télé 88 Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Télé 88 Pro — Retro Bold Edition
+   Inspired by vintage print / comic book style
+   ============================================================ */
+:root{
+  --r-sm:10px;
+  --r:14px;
+  --r-lg:20px;
+  --r-xl:26px;
+  --t:.16s cubic-bezier(.4,0,.2,1);
+  --font-display:'Bungee','Archivo Black',sans-serif;
+  --font-head:'Archivo Black',sans-serif;
+  --font:'Space Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
+  --bw:2.5px;
+}
+
+/* ---------- PAPER (Light) ---------- */
+html[data-theme="paper"]{
+  --bg:#ede2c8;
+  --bg-dot:rgba(26,26,26,.09);
+  --surface:#f8efd9;
+  --surface-2:#e8dcc0;
+  --surface-3:#e0d3b3;
+  --ink:#1a1a1a;
+  --ink-soft:rgba(26,26,26,.66);
+  --ink-faint:rgba(26,26,26,.4);
+  --red:#c8322b;
+  --red-2:#a5201c;
+  --amber:#f0b93d;
+  --amber-2:#d99a1e;
+  --white:#ffffff;
+  --accent:var(--red);
+  --accent-2:var(--amber);
+  --danger:#c8322b;
+  --success:#3aa86b;
+  --border:var(--ink);
+  --shadow-sm:3px 3px 0 var(--ink);
+  --shadow:5px 5px 0 var(--ink);
+  --shadow-lg:8px 8px 0 var(--ink);
+  --overlay:rgba(26,26,26,.75);
+  --accent-ring:rgba(200,50,43,.35);
+}
+
+/* ---------- NIGHT (Dark) ---------- */
+html[data-theme="night"]{
+  --bg:#141414;
+  --bg-dot:rgba(237,226,200,.08);
+  --surface:#1e1e1e;
+  --surface-2:#262626;
+  --surface-3:#2e2e2e;
+  --ink:#ede2c8;
+  --ink-soft:rgba(237,226,200,.72);
+  --ink-faint:rgba(237,226,200,.42);
+  --red:#e0453c;
+  --red-2:#c8322b;
+  --amber:#f5c04c;
+  --amber-2:#d99a1e;
+  --white:#ede2c8;
+  --accent:var(--amber);
+  --accent-2:var(--red);
+  --danger:#e0453c;
+  --success:#4ecb88;
+  --border:var(--ink);
+  --shadow-sm:3px 3px 0 rgba(237,226,200,.9);
+  --shadow:5px 5px 0 rgba(237,226,200,.9);
+  --shadow-lg:8px 8px 0 rgba(237,226,200,.9);
+  --overlay:rgba(0,0,0,.85);
+  --accent-ring:rgba(240,185,61,.3);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  background-image:
+    radial-gradient(circle,var(--bg-dot) 1.2px,transparent 1.6px);
+  background-size:18px 18px;
+  color:var(--ink);
+  min-height:100vh;
+  transition:background-color .2s,color .2s;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+button,input{font:inherit;color:inherit;border:0;background:none;outline:none}
+button{cursor:pointer;font-family:inherit}
+img{display:block;max-width:100%}
+::selection{background:var(--red);color:#fff}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--ink-faint);border-radius:99px}
+
+.page{min-height:100vh;display:flex;flex-direction:column}
+
+/* ============ HEADER ============ */
+.header{
+  position:sticky;top:0;z-index:50;
+  padding:14px 22px;
+  background:var(--bg);
+  border-bottom:var(--bw) solid var(--border);
+}
+.header-inner{
+  max-width:1280px;margin:0 auto;
+  display:flex;align-items:center;gap:14px;
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-mark{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--red);color:#fff;
+  border:var(--bw) solid var(--border);
+  box-shadow:var(--shadow-sm);
+  display:grid;place-items:center;flex-shrink:0;
+  font-family:var(--font-display);
+  font-size:20px;letter-spacing:-.5px;
+  transform:rotate(-4deg);
+  transition:transform var(--t);
+}
+.brand:hover .brand-mark{transform:rotate(4deg) scale(1.05)}
+.brand-text small{
+  display:block;font-size:10px;font-weight:700;
+  letter-spacing:3px;color:var(--ink-faint);
+  text-transform:uppercase;line-height:1;margin-bottom:4px;
+  font-family:var(--font);
+}
+.brand-text b{
+  display:block;font-family:var(--font-display);
+  font-size:19px;font-weight:400;
+  letter-spacing:-.3px;line-height:1;color:var(--ink);
+}
+.header-actions{margin-left:auto;display:flex;gap:8px}
+.icon-btn{
+  width:44px;height:44px;border-radius:14px;
+  display:grid;place-items:center;
+  background:var(--surface);
+  border:var(--bw) solid var(--border);
+  box-shadow:var(--shadow-sm);
+  transition:all var(--t);
+  color:var(--ink);
+}
+.icon-btn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.icon-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.icon-btn svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* ============ HERO ============ */
+.hero{
+  padding:44px 22px 28px;
+  max-width:1280px;margin:0 auto;width:100%;
+  text-align:center;
+}
+.hero-kicker{
+  display:inline-block;
+  padding:6px 14px;
+  background:var(--amber);
+  color:var(--ink);
+  border:var(--bw) solid var(--border);
+  border-radius:99px;
+  font-family:var(--font);
+  font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  box-shadow:var(--shadow-sm);
+  margin-bottom:20px;
+  transform:rotate(-2deg);
+}
+.hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(34px,6.5vw,68px);
+  font-weight:400;
+  letter-spacing:-2.5px;
+  line-height:.98;
+  margin-bottom:16px;
+  color:var(--ink);
+}
+.hero h1 .red{color:var(--red)}
+.hero h1 .amber{color:var(--amber-2)}
+.hero p{
+  color:var(--ink-soft);
+  font-size:clamp(15px,1.7vw,17px);
+  font-weight:500;
+  max-width:520px;margin:0 auto 32px;
+  line-height:1.55;
+}
+
+/* ============ BIG SEARCH ============ */
+.search-wrap{
+  max-width:760px;margin:0 auto;
+  display:flex;flex-direction:column;gap:12px;
+}
+.search-box{
+  position:relative;
+  display:flex;align-items:center;
+  background:var(--surface);
+  border:var(--bw) solid var(--border);
+  border-radius:var(--r-xl);
+  padding:6px 6px 6px 20px;
+  transition:all var(--t);
+  box-shadow:var(--shadow);
+}
+.search-box:focus-within{
+  transform:translate(-1px,-1px);
+  box-shadow:var(--shadow-lg);
+}
+.search-icon{
+  width:22px;height:22px;
+  stroke:var(--ink-soft);fill:none;
+  stroke-width:2.4;stroke-linecap:round;
+  flex-shrink:0;
+}
+.search-box input{
+  flex:1;height:56px;
+  padding:0 14px;
+  font-size:16px;font-weight:500;
+  color:var(--ink);
+  font-family:var(--font);
+}
+.search-box input::placeholder{color:var(--ink-faint)}
+.search-clear{
+  width:34px;height:34px;border-radius:50%;
+  display:none;place-items:center;flex-shrink:0;
+  transition:background var(--t);
+  color:var(--ink-soft);
+}
+.search-clear:hover{background:var(--surface-2)}
+.search-clear.show{display:grid}
+.search-clear svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.8;stroke-linecap:round}
+.search-btn{
+  height:56px;padding:0 22px;
+  border-radius:var(--r-lg);
+  background:var(--red);color:#fff;
+  font-family:var(--font);
+  font-weight:700;font-size:13px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:10px;
+  border:var(--bw) solid var(--border);
+  box-shadow:var(--shadow-sm);
+  transition:all var(--t);
+  flex-shrink:0;white-space:nowrap;
+}
+.search-btn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.search-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.search-btn svg{width:16px;height:16px;fill:#fff}
+.search-hint{
+  font-size:12px;color:var(--ink-faint);
+  text-align:center;font-weight:500;
+  font-family:var(--font);
+  letter-spacing:.3px;
+}
+.search-hint kbd{
+  padding:3px 8px;border-radius:6px;
+  background:var(--surface);border:1.5px solid var(--border);
+  font-family:var(--font);font-size:11px;font-weight:700;
+  color:var(--ink);
+  box-shadow:2px 2px 0 var(--ink);
+  margin:0 2px;
+}
+
+/* ============ TOOLBAR ============ */
+.toolbar{
+  max-width:1280px;margin:0 auto;
+  padding:8px 22px 22px;
+  width:100%;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.view-switch{
+  display:flex;gap:6px;
+}
+.view-btn{
+  padding:9px 16px;border-radius:12px;
+  font-family:var(--font);
+  font-size:12px;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;
+  color:var(--ink-soft);
+  background:var(--surface);
+  border:var(--bw) solid var(--border);
+  box-shadow:var(--shadow-sm);
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all var(--t);
+}
+.view-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.view-btn.active{background:var(--amber);color:var(--ink)}
+.view-btn:hover:not(.active){transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.view-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.stats{
+  margin-left:auto;
+  font-family:var(--font);
+  font-size:12px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--ink-faint);
+}
+
+/* ============ GRID ============ */
+.container{
+  max-width:1280px;margin:0 auto;
+  padding:0 22px 40px;
+  width:100%;flex:1;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:18px;
+}
+
+/* ============ CARD ============ */
+.card{
+  position:relative;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  background:var(--surface);
+  border:var(--bw) solid var(--border);
+  box-shadow:var(--shadow-sm);
+  cursor:pointer;
+  transition:all var(--t);
+  display:flex;flex-direction:column;
+}
+.card:hover{
+  transform:translate(-2px,-2px);
+  box-shadow:var(--shadow);
+}
+.card:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.card-media{
+  position:relative;
+  aspect-ratio:16/10;
+  background:var(--surface-2);
+  overflow:hidden;
+  border-bottom:var(--bw) solid var(--border);
+}
+.card-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.card:hover .card-media img{transform:scale(1.06)}
+.card-media .placeholder{
+  position:absolute;inset:0;
+  background:var(--red);
+  display:grid;place-items:center;
+}
+.card-media .placeholder::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.18) 1.2px,transparent 1.6px);
+  background-size:14px 14px;
+}
+.card-media .placeholder svg{
+  width:52px;height:52px;fill:none;
+  stroke:#fff;stroke-width:1.6;
+  position:relative;z-index:1;
+}
+.card-info{
+  padding:12px 14px 14px;
+  display:flex;align-items:center;gap:10px;
+  background:var(--surface);
+}
+.card-title{
+  flex:1;min-width:0;
+  font-family:var(--font);
+  font-size:14px;font-weight:700;
+  letter-spacing:-.2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  color:var(--ink);
+}
+.card-btn{
+  width:30px;height:30px;border-radius:8px;
+  display:grid;place-items:center;flex-shrink:0;
+  transition:all var(--t);
+  color:var(--ink-soft);
+  border:1.5px solid transparent;
+}
+.card-btn:hover{background:var(--amber);color:var(--ink);border-color:var(--border)}
+.card-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round}
+
+/* ============ FOLDER ============ */
+.folder .card-media{
+  background:var(--amber);
+  border-bottom:var(--bw) solid var(--border);
+}
+.folder .card-media::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(26,26,26,.14) 1.2px,transparent 1.6px);
+  background-size:14px 14px;
+}
+.folder .card-media svg.icon{
+  position:absolute;inset:0;margin:auto;
+  width:56px;height:56px;
+  stroke:var(--ink);fill:none;stroke-width:2;
+  z-index:1;
+}
+.folder .card-media .folder-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 55%,rgba(26,26,26,.3));
+  pointer-events:none;
+}
+.folder .card-media .folder-count{
+  position:absolute;bottom:10px;right:10px;
+  padding:5px 11px;border-radius:99px;
+  background:var(--ink);color:var(--bg);
+  font-family:var(--font-display);
+  font-size:12px;letter-spacing:.5px;
+  border:2px solid var(--bg);
+  z-index:2;
+}
+
+/* ============ FOLDER VIEW ============ */
+.folder-header{
+  max-width:1280px;margin:0 auto;
+  padding:6px 22px 20px;
+  width:100%;
+  display:flex;align-items:center;gap:16px;
+}
+.back-btn{
+  width:48px;height:48px;border-radius:14px;
+  display:grid;place-items:center;flex-shrink:0;
+  background:var(--surface);
+  border:var(--bw) solid var(--border);
+  box-shadow:var(--shadow-sm);
+  transition:all var(--t);
+  color:var(--ink);
+}
+.back-btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.back-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.back-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.folder-title{
+  font-family:var(--font-display);
+  font-size:24px;font-weight:400;
+  letter-spacing:-.5px;color:var(--ink);
+  line-height:1;
+}
+.folder-title small{
+  display:block;font-family:var(--font);
+  font-size:12px;font-weight:600;
+  color:var(--ink-faint);margin-top:6px;
+  letter-spacing:1.2px;text-transform:uppercase;
+}
+
+/* ============ EMPTY ============ */
+.empty{text-align:center;padding:80px 24px;max-width:520px;margin:0 auto}
+.empty-icon{
+  width:100px;height:100px;margin:0 auto 22px;
+  border-radius:28px;
+  background:var(--amber);
+  border:var(--bw) solid var(--border);
+  box-shadow:var(--shadow);
+  display:grid;place-items:center;
+  transform:rotate(-5deg);
+}
+.empty-icon svg{width:44px;height:44px;stroke:var(--ink);fill:none;stroke-width:2}
+.empty h3{font-family:var(--font-display);font-size:22px;font-weight:400;margin-bottom:10px;letter-spacing:-.3px;color:var(--ink)}
+.empty p{color:var(--ink-soft);font-size:15px;line-height:1.6}
+
+/* ============ SITE FOOTER (visible copyright) ============ */
+.site-footer{
+  max-width:1280px;margin:0 auto;
+  padding:0 22px 24px;
+  width:100%;
+}
+.footer-card{
+  padding:18px 22px;
+  background:var(--ink);
+  color:var(--bg);
+  border:var(--bw) solid var(--border);
+  border-radius:var(--r-lg);
+  display:flex;align-items:center;gap:16px;
+  box-shadow:var(--shadow-sm);
+}
+.footer-badge{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--red);color:#fff;
+  border:2.5px solid var(--bg);
+  display:grid;place-items:center;flex-shrink:0;
+  font-family:var(--font-display);
+  font-size:18px;
+}
+.footer-text{flex:1;min-width:0}
+.footer-text b{
+  display:block;
+  font-family:var(--font-display);
+  font-size:14px;letter-spacing:.5px;
+  line-height:1;
+  margin-bottom:4px;
+}
+.footer-text b .red{color:var(--red)}
+.footer-text small{
+  display:block;
+  font-family:var(--font);
+  font-size:11px;font-weight:500;
+  color:rgba(237,226,200,.7);
+  letter-spacing:.8px;
+  line-height:1.4;
+}
+html[data-theme="night"] .footer-text small{color:rgba(26,26,26,.7)}
+.footer-cta{
+  padding:8px 14px;
+  background:var(--amber);color:var(--ink);
+  border:2px solid var(--bg);
+  border-radius:99px;
+  font-family:var(--font);
+  font-size:10px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  flex-shrink:0;
+}
+
+/* ============ FAB ============ */
+.fab{
+  position:fixed;
+  bottom:26px;right:26px;
+  width:64px;height:64px;
+  border-radius:20px;
+  background:var(--red);
+  color:#fff;
+  display:grid;place-items:center;
+  border:var(--bw) solid var(--border);
+  box-shadow:var(--shadow);
+  z-index:40;
+  transition:all var(--t);
+}
+.fab:hover{transform:translate(-2px,-2px) rotate(90deg);box-shadow:var(--shadow-lg)}
+.fab:active{transform:translate(2px,2px) rotate(90deg);box-shadow:1px 1px 0 var(--ink)}
+.fab svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round}
+
+/* ============ MODAL ============ */
+.overlay{
+  position:fixed;inset:0;z-index:100;
+  background:var(--overlay);
+  display:none;
+  align-items:center;justify-content:center;
+  padding:20px;
+  animation:fadeIn .2s;
+}
+.overlay.open{display:flex}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.modal{
+  width:min(560px,100%);
+  max-height:90vh;overflow-y:auto;
+  padding:28px;
+  border-radius:var(--r-xl);
+  background:var(--surface);
+  border:var(--bw) solid var(--border);
+  box-shadow:8px 8px 0 rgba(0,0,0,.5);
+  animation:slideUp .25s cubic-bezier(.4,0,.2,1);
+}
+.modal-header{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:16px;margin-bottom:22px;
+}
+.modal-title{
+  font-family:var(--font-display);
+  font-size:22px;font-weight:400;
+  letter-spacing:-.3px;color:var(--ink);
+  line-height:1.1;
+}
+.modal-sub{
+  font-family:var(--font);
+  font-size:12px;font-weight:500;
+  color:var(--ink-faint);margin-top:6px;
+  letter-spacing:.3px;
+}
+.modal-close{
+  width:42px;height:42px;border-radius:12px;
+  display:grid;place-items:center;flex-shrink:0;
+  background:var(--surface-2);
+  border:var(--bw) solid var(--border);
+  box-shadow:var(--shadow-sm);
+  transition:all var(--t);
+  color:var(--ink);
+}
+.modal-close:hover{background:var(--red);color:#fff;transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.modal-close:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.modal-close svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round}
+
+/* Fields */
+.field{margin-bottom:18px}
+.field label{
+  display:block;
+  font-family:var(--font);
+  font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:1.2px;
+  color:var(--ink-soft);margin-bottom:8px;
+}
+.field input[type="text"],
+.field input[type="url"]{
+  width:100%;height:52px;
+  padding:0 16px;
+  border-radius:12px;
+  background:var(--surface-2);
+  border:var(--bw) solid var(--border);
+  color:var(--ink);
+  font-family:var(--font);
+  font-size:15px;font-weight:500;
+  transition:all var(--t);
+}
+.field input:focus{
+  background:var(--surface);
+  box-shadow:var(--shadow-sm);
+}
+.field input::placeholder{color:var(--ink-faint)}
+
+.upload{
+  position:relative;width:100%;
+  aspect-ratio:16/10;
+  border-radius:var(--r);
+  border:var(--bw) dashed var(--border);
+  background:var(--surface-2);
+  display:grid;place-items:center;
+  cursor:pointer;overflow:hidden;
+  transition:all var(--t);
+}
+.upload:hover{
+  border-style:solid;
+  background:var(--surface);
+  box-shadow:var(--shadow-sm);
+}
+.upload.has-image{border-style:solid;border-color:var(--border)}
+.upload img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.upload-hint{text-align:center;padding:20px;position:relative;z-index:1;pointer-events:none}
+.upload-hint svg{
+  width:38px;height:38px;margin:0 auto 10px;display:block;
+  stroke:var(--ink-soft);fill:none;stroke-width:1.8;
+}
+.upload-hint b{display:block;font-size:14px;font-weight:700;margin-bottom:4px;color:var(--ink);font-family:var(--font)}
+.upload-hint small{font-size:12px;color:var(--ink-faint);font-family:var(--font)}
+
+.btn-row{display:flex;gap:10px;margin-top:22px}
+.btn{
+  flex:1;height:54px;
+  border-radius:14px;
+  font-family:var(--font);
+  font-size:12px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  transition:all var(--t);
+  border:var(--bw) solid var(--border);
+}
+.btn-ghost{
+  background:var(--surface);color:var(--ink);
+  box-shadow:var(--shadow-sm);
+}
+.btn-ghost:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.btn-ghost:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn-primary{
+  background:var(--red);color:#fff;
+  box-shadow:var(--shadow-sm);
+}
+.btn-primary:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.btn-primary:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round}
+
+/* Settings */
+.settings-group{
+  padding:20px 0;
+  border-bottom:1.5px solid var(--border);
+}
+.settings-group:first-child{padding-top:0}
+.settings-group:last-child{border-bottom:0;padding-bottom:0}
+.settings-group h4{
+  font-family:var(--font);
+  font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:1.5px;
+  color:var(--ink-faint);margin-bottom:12px;
+}
+.theme-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.theme-card{
+  padding:14px;
+  border-radius:14px;
+  background:var(--surface-2);
+  border:var(--bw) solid var(--border);
+  display:flex;align-items:center;gap:12px;
+  transition:all var(--t);text-align:left;
+  box-shadow:var(--shadow-sm);
+}
+.theme-card:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.theme-card:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.theme-card.active{background:var(--amber)}
+.theme-swatch{
+  width:38px;height:38px;border-radius:10px;flex-shrink:0;
+  border:var(--bw) solid var(--border);
+}
+.theme-swatch.paper{background:linear-gradient(135deg,#ede2c8 0%,#f0b93d 60%,#c8322b 100%)}
+.theme-swatch.night{background:linear-gradient(135deg,#141414 0%,#2e2e2e 60%,#f0b93d 100%)}
+.theme-card b{
+  display:block;font-family:var(--font);
+  font-size:13px;font-weight:700;
+  letter-spacing:.3px;color:var(--ink);
+}
+.theme-card small{
+  display:block;font-family:var(--font);
+  font-size:11px;color:var(--ink-soft);
+  margin-top:3px;font-weight:500;
+  letter-spacing:.3px;
+}
+
+.action-item{
+  display:flex;align-items:center;gap:14px;
+  padding:13px 15px;
+  border-radius:14px;
+  background:var(--surface-2);
+  border:var(--bw) solid var(--border);
+  margin-bottom:8px;
+  transition:all var(--t);
+  cursor:pointer;width:100%;text-align:left;color:var(--ink);
+  box-shadow:var(--shadow-sm);
+}
+.action-item:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.action-item:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.action-item .icon{
+  width:40px;height:40px;border-radius:11px;
+  background:var(--amber);
+  border:2px solid var(--border);
+  display:grid;place-items:center;flex-shrink:0;
+}
+.action-item .icon svg{
+  width:17px;height:17px;stroke:var(--ink);fill:none;
+  stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
+}
+.action-item.danger .icon{background:var(--red)}
+.action-item.danger .icon svg{stroke:#fff}
+.action-item .body{flex:1;min-width:0}
+.action-item .body b{
+  display:block;
+  font-family:var(--font);
+  font-size:14px;font-weight:700;
+  color:var(--ink);letter-spacing:.2px;
+}
+.action-item .body small{
+  display:block;font-family:var(--font);
+  font-size:11.5px;color:var(--ink-soft);
+  margin-top:3px;font-weight:500;
+}
+.action-item > svg{width:16px;height:16px;stroke:var(--ink-soft);fill:none;stroke-width:2.6;flex-shrink:0}
+
+.copyright{
+  text-align:center;padding:20px 0 4px;
+  font-family:var(--font);
+  color:var(--ink-soft);font-size:12px;
+  line-height:1.7;letter-spacing:.3px;
+}
+.copyright b{
+  font-family:var(--font-display);
+  color:var(--red);
+  font-weight:400;letter-spacing:.5px;
+}
+
+/* Player */
+#player{
+  position:fixed;inset:0;z-index:200;
+  background:#000;display:none;flex-direction:column;
+}
+#player.open{display:flex;animation:fadeIn .2s}
+.player-bar{
+  position:absolute;top:0;left:0;right:0;z-index:2;
+  padding:16px;
+  display:flex;justify-content:space-between;align-items:flex-start;
+  background:linear-gradient(180deg,rgba(0,0,0,.75),transparent);
+  pointer-events:none;
+}
+.player-bar > *{pointer-events:auto}
+.player-title{
+  padding:10px 16px;
+  background:rgba(0,0,0,.7);
+  border:2px solid rgba(255,255,255,.2);
+  border-radius:12px;
+  color:#fff;font-family:var(--font);
+  font-weight:700;font-size:13px;
+  max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  letter-spacing:.3px;
+}
+.player-close{
+  width:48px;height:48px;border-radius:50%;
+  background:var(--red);color:#fff;
+  display:grid;place-items:center;
+  border:2.5px solid rgba(255,255,255,.3);
+  box-shadow:0 8px 24px rgba(200,50,43,.5);
+  transition:all var(--t);
+}
+.player-close:hover{transform:rotate(90deg)}
+.player-close:active{transform:scale(.9) rotate(90deg)}
+.player-close svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2.8;stroke-linecap:round}
+#playerFrame{width:100%;height:100%;border:0}
+
+/* Toast */
+#toast{
+  position:fixed;bottom:26px;left:50%;
+  transform:translate(-50%,80px);
+  padding:14px 20px;border-radius:14px;
+  background:var(--ink);color:var(--bg);
+  font-family:var(--font);font-weight:600;font-size:13px;
+  letter-spacing:.3px;
+  border:var(--bw) solid var(--border);
+  box-shadow:var(--shadow-sm);
+  opacity:0;pointer-events:none;
+  transition:all var(--t);z-index:300;
+  max-width:90vw;display:flex;align-items:center;gap:10px;
+}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#toast svg{width:18px;height:18px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round}
+#toast.success svg{stroke:#4ecb88}
+#toast.error svg{stroke:#ff6b6b}
+
+/* Context menu */
+.ctx{
+  position:fixed;z-index:120;min-width:180px;padding:6px;
+  border-radius:14px;background:var(--surface);
+  border:var(--bw) solid var(--border);
+  box-shadow:var(--shadow);
+  display:none;animation:slideUp .15s;
+}
+.ctx.open{display:block}
+.ctx-item{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 12px;border-radius:9px;
+  font-family:var(--font);
+  font-size:13px;font-weight:600;
+  width:100%;text-align:left;
+  transition:background var(--t);color:var(--ink);
+  letter-spacing:.3px;
+}
+.ctx-item:hover{background:var(--surface-2)}
+.ctx-item svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;flex-shrink:0}
+.ctx-item.danger{color:var(--red)}
+
+/* Responsive */
+@media(max-width:760px){
+  .header{padding:12px 16px}
+  .brand-mark{width:46px;height:46px;font-size:18px}
+  .brand-text b{font-size:17px}
+  .hero{padding:32px 16px 20px}
+  .hero p{margin-bottom:24px}
+  .toolbar{padding:6px 16px 18px}
+  .container{padding:0 16px 30px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .search-box{padding:5px 5px 5px 16px}
+  .search-box input{height:50px;font-size:15px;padding:0 10px}
+  .search-icon{width:20px;height:20px}
+  .search-btn{height:50px;padding:0 14px;font-size:11px;gap:6px;letter-spacing:1px}
+  .search-btn svg{width:14px;height:14px}
+  .search-hint{font-size:11px}
+  .modal{padding:22px;border-radius:22px}
+  .fab{bottom:18px;right:18px;width:58px;height:58px;border-radius:18px}
+  .theme-grid{grid-template-columns:1fr}
+  .folder-header{padding:6px 16px 18px}
+  .site-footer{padding:0 16px 20px}
+  .footer-card{padding:14px 16px;gap:12px}
+  .footer-badge{width:38px;height:38px;font-size:15px}
+  .footer-text b{font-size:12.5px}
+  .footer-text small{font-size:10px}
+  .footer-cta{padding:6px 10px;font-size:9px;letter-spacing:1px}
+  .view-btn{padding:8px 12px;font-size:11px;letter-spacing:.8px}
+  .card-info{padding:10px 12px 12px}
+  .card-title{font-size:13px}
+}
+@media(max-width:400px){
+  .search-btn .btn-text{display:none}
+  .search-btn{padding:0 12px}
+  .footer-text small{letter-spacing:.4px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-mark">88</div>
+      <div class="brand-text">
+        <small>Pro Edition</small>
+        <b>TÉLÉ 88</b>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeBtn" title="Toggle theme">
+        <svg id="themeIcon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <button class="icon-btn" id="settingsBtn" title="Settings">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.08a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.08a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.08a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="hero-kicker">★ Pro Edition</span>
+  <h1>Your Channels,<br><span class="red">Your Way.</span></h1>
+  <p>Search, organize, watch. Simple and powerful.</p>
+  <div class="search-wrap">
+    <div class="search-box">
+      <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="search" id="searchInput" placeholder="Search your channels..." autocomplete="off">
+      <button class="search-clear" id="searchClear">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <button class="search-btn" id="ytSearchBtn">
+        <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.5 15.5v-7l6.5 3.5z"/></svg>
+        <span class="btn-text">Search YouTube</span>
+      </button>
+    </div>
+    <p class="search-hint">Type to filter · Press <kbd>Enter</kbd> to search YouTube</p>
+  </div>
+</section>
+
+<div class="toolbar">
+  <div class="view-switch" id="viewSwitch">
+    <button class="view-btn active" data-view="grid">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      Grid
+    </button>
+    <button class="view-btn" data-view="folders">
+      <svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+      Folders
+    </button>
+  </div>
+  <span class="stats" id="stats"></span>
+</div>
+
+<main class="container" id="mainContent"></main>
+
+<footer class="site-footer">
+  <div class="footer-card">
+    <div class="footer-badge">88</div>
+    <div class="footer-text">
+      <b>© MC88 · TÉLÉ <span class="red">88</span> PRO</b>
+      <small>Original work · crafted with care · all rights reserved · v1.0</small>
+    </div>
+    <span class="footer-cta">Not for resale</span>
+  </div>
+</footer>
+
+<button class="fab" id="fabBtn" title="Add channel">
+  <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+</button>
+
+<div class="overlay" id="channelModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="channelModalTitle">New channel</div>
+        <div class="modal-sub">Add a YouTube link and cover image</div>
+      </div>
+      <button class="modal-close" data-close="channelModal">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="field"><label>Name</label><input type="text" id="chName" placeholder="e.g. France 24" maxlength="60"></div>
+    <div class="field"><label>YouTube link</label><input type="url" id="chUrl" placeholder="https://www.youtube.com/watch?v=..." dir="ltr"></div>
+    <div class="field">
+      <label>Cover image</label>
+      <div class="upload" id="uploadZone">
+        <input type="file" id="chImage" accept="image/*" hidden>
+        <div class="upload-hint" id="uploadHint">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <b>Choose an image</b>
+          <small>Square recommended · max 5 MB</small>
+        </div>
+        <img id="uploadPreview" style="display:none" alt="">
+      </div>
+    </div>
+    <div class="field"><label>Folder (optional)</label><input type="text" id="chFolder" placeholder="e.g. News" maxlength="40"></div>
+    <div class="btn-row">
+      <button class="btn btn-ghost" data-close="channelModal">Cancel</button>
+      <button class="btn btn-primary" id="saveChannelBtn">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Save
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="settingsModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title">Settings</div>
+        <div class="modal-sub">Configure Télé 88 Pro</div>
+      </div>
+      <button class="modal-close" data-close="settingsModal">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="settings-group">
+      <h4>Appearance</h4>
+      <div class="theme-grid">
+        <button class="theme-card" data-set-theme="paper">
+          <div class="theme-swatch paper"></div>
+          <div><b>Paper</b><small>Day mode</small></div>
+        </button>
+        <button class="theme-card" data-set-theme="night">
+          <div class="theme-swatch night"></div>
+          <div><b>Night</b><small>Dark mode</small></div>
+        </button>
+      </div>
+    </div>
+
+    <div class="settings-group">
+      <h4>Data</h4>
+      <button class="action-item" id="exportBtn">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+        <div class="body"><b>Export data</b><small>Download a JSON backup</small></div>
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <button class="action-item" id="importBtn">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+        <div class="body"><b>Import data</b><small>Restore from a backup file</small></div>
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <input type="file" id="importInput" accept=".json,application/json" hidden>
+    </div>
+
+    <div class="settings-group">
+      <h4>Danger zone</h4>
+      <button class="action-item danger" id="clearAllBtn">
+        <div class="icon"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg></div>
+        <div class="body"><b>Clear everything</b><small>Remove all channels</small></div>
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <div class="copyright">
+      © <b>MC88</b> · Télé 88 Pro<br>
+      <span style="font-size:11px">v1.0 · Original work · Do not resell</span>
+    </div>
+  </div>
+</div>
+
+<div class="ctx" id="ctxMenu"></div>
+</div>
+
+<div id="player">
+  <div class="player-bar">
+    <div class="player-title" id="playerTitle"></div>
+    <button class="player-close" id="playerClose">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <iframe id="playerFrame" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+
+<div id="toast"></div>
+
+<script>
+(function(){
+'use strict';
+
+var STORE = 'tele88pro_v4';
+var state = { theme:'paper', view:'grid', channels:[], currentFolder:null };
+var editingId = null;
+var uploadData = '';
+
+function $(id){ return document.getElementById(id); }
+function esc(s){
+  return String(s||'').replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+function uid(){ return 'c_' + Date.now() + '_' + Math.random().toString(36).slice(2,7); }
+
+function save(){ try { localStorage.setItem(STORE, JSON.stringify(state)); } catch(e){ toast('Storage full', 'error'); } }
+function load(){
+  try {
+    var raw = localStorage.getItem(STORE);
+    if(!raw){ raw = localStorage.getItem('tele88pro_v3'); }
+    if(raw){
+      var obj = JSON.parse(raw);
+      if(obj && typeof obj === 'object'){
+        state.theme = (obj.theme === 'night') ? 'night' : 'paper';
+        state.view = obj.view === 'folders' ? 'folders' : 'grid';
+        state.channels = Array.isArray(obj.channels) ? obj.channels : [];
+      }
+    }
+  } catch(e){}
+}
+
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme', state.theme);
+  var meta = document.querySelector('meta[name="theme-color"]');
+  if(meta) meta.setAttribute('content', state.theme === 'paper' ? '#ede2c8' : '#141414');
+  var icon = $('themeIcon');
+  if(icon){
+    icon.innerHTML = state.theme === 'night'
+      ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>'
+      : '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>';
+  }
+  document.querySelectorAll('.theme-card').forEach(function(el){
+    el.classList.toggle('active', el.dataset.setTheme === state.theme);
+  });
+}
+function toggleTheme(){
+  state.theme = state.theme === 'night' ? 'paper' : 'night';
+  save(); applyTheme();
+  toast(state.theme === 'night' ? 'Night mode' : 'Paper mode', 'success');
+}
+
+function toast(msg, type){
+  var el = $('toast');
+  var icon = '';
+  if(type === 'success') icon = '<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
+  else if(type === 'error') icon = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
+  el.innerHTML = icon + '<span></span>';
+  el.querySelector('span').textContent = msg;
+  el.className = 'show ' + (type||'');
+  clearTimeout(el._t);
+  el._t = setTimeout(function(){ el.className = ''; }, 2200);
+}
+
+function openModal(id){ $(id).classList.add('open'); }
+function closeModal(id){ $(id).classList.remove('open'); }
+
+function render(){
+  var main = $('mainContent');
+  var stats = $('stats');
+  var total = state.channels.length;
+  var folders = getFolders();
+  stats.textContent = total + ' channel' + (total !== 1 ? 's' : '') + ' · ' + folders.length + ' folder' + (folders.length !== 1 ? 's' : '');
+
+  if(state.currentFolder !== null){ renderFolderView(main, state.currentFolder); return; }
+
+  if(!total){
+    main.innerHTML = '<div class="empty">' +
+      '<div class="empty-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="3"/></svg></div>' +
+      '<h3>Start your collection</h3>' +
+      '<p>Add your first channel with the + button, or search YouTube above.</p>' +
+      '</div>';
+    return;
+  }
+
+  var q = ($('searchInput').value || '').toLowerCase().trim();
+  var filtered = q
+    ? state.channels.filter(function(c){ return (c.name||'').toLowerCase().indexOf(q) !== -1; })
+    : state.channels;
+
+  if(!filtered.length){
+    main.innerHTML = '<div class="empty">' +
+      '<div class="empty-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>' +
+      '<h3>No channels found</h3>' +
+      '<p>Nothing matches "' + esc(q) + '" in your library.</p>' +
+      '</div>';
+    return;
+  }
+
+  if(state.view === 'grid') renderGrid(main, filtered);
+  else renderFoldersView(main, filtered);
+}
+
+function getFolders(){
+  var map = {};
+  state.channels.forEach(function(c){
+    var f = (c.folder || '').trim();
+    if(f) map[f] = (map[f] || 0) + 1;
+  });
+  return Object.keys(map).sort().map(function(name){
+    return { name: name, count: map[name] };
+  });
+}
+
+function channelCardHTML(ch){
+  var media = ch.image
+    ? '<img src="' + esc(ch.image) + '" alt="">'
+    : '<div class="placeholder"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="3"/></svg></div>';
+  return '<div class="card" data-id="' + esc(ch.id) + '">' +
+    '<div class="card-media">' + media + '</div>' +
+    '<div class="card-info">' +
+      '<div class="card-title">' + esc(ch.name) + '</div>' +
+      '<button class="card-btn" data-menu="' + esc(ch.id) + '">' +
+        '<svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="12" cy="19" r="1.2"/></svg>' +
+      '</button>' +
+    '</div>' +
+  '</div>';
+}
+
+function folderCardHTML(f){
+  var cover = state.channels.find(function(c){ return c.folder === f.name && c.image; });
+  var bg = cover ? ' style="background-image:url(' + esc(cover.image) + ');background-size:cover;background-position:center"' : '';
+  var iconOnly = cover ? '' : '<svg class="icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>';
+  return '<div class="card folder" data-folder="' + esc(f.name) + '">' +
+    '<div class="card-media"' + bg + '>' + iconOnly + '<div class="folder-overlay"></div>' +
+      '<div class="folder-count">' + f.count + '</div>' +
+    '</div>' +
+    '<div class="card-info"><div class="card-title">' + esc(f.name) + '</div></div>' +
+  '</div>';
+}
+
+function renderGrid(main, channels){
+  var html = '<div class="grid">';
+  channels.forEach(function(ch){ html += channelCardHTML(ch); });
+  html += '</div>';
+  main.innerHTML = html;
+  bindCardEvents();
+}
+
+function renderFoldersView(main, channels){
+  var folders = getFolders();
+  var unfoldered = channels.filter(function(c){ return !c.folder || !c.folder.trim(); });
+  var html = '<div class="grid">';
+  folders.forEach(function(f){ html += folderCardHTML(f); });
+  unfoldered.forEach(function(ch){ html += channelCardHTML(ch); });
+  html += '</div>';
+  main.innerHTML = html;
+  main.querySelectorAll('.folder').forEach(function(el){
+    el.addEventListener('click', function(){
+      state.currentFolder = el.dataset.folder;
+      render();
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+  bindCardEvents();
+}
+
+function renderFolderView(main, folderName){
+  var channels = state.channels.filter(function(c){ return c.folder === folderName; });
+  var html = '<div class="folder-header">' +
+    '<button class="back-btn" id="backFromFolder"><svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></button>' +
+    '<div class="folder-title">' + esc(folderName) + '<small>' + channels.length + ' channel' + (channels.length !== 1 ? 's' : '') + '</small></div>' +
+  '</div>';
+  if(!channels.length){
+    html += '<div class="empty"><h3>Empty folder</h3><p>Add channels to this folder.</p></div>';
+  } else {
+    html += '<div class="grid">';
+    channels.forEach(function(ch){ html += channelCardHTML(ch); });
+    html += '</div>';
+  }
+  main.innerHTML = html;
+  var backBtn = $('backFromFolder');
+  if(backBtn) backBtn.addEventListener('click', function(){
+    state.currentFolder = null;
+    render();
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+  bindCardEvents();
+}
+
+function bindCardEvents(){
+  document.querySelectorAll('.card').forEach(function(card){
+    card.addEventListener('click', function(e){
+      if(e.target.closest('.card-btn')) return;
+      if(card.classList.contains('folder')) return;
+      var id = card.dataset.id;
+      var ch = state.channels.find(function(c){ return c.id === id; });
+      if(ch) playChannel(ch);
+    });
+  });
+  document.querySelectorAll('.card-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      openContextMenu(e, btn.dataset.menu);
+    });
+  });
+}
+
+function extractVideoId(url){
+  if(!url) return '';
+  var s = String(url).trim();
+  var patterns = [
+    /(?:youtube\.com\/watch\?[^#]*v=)([A-Za-z0-9_-]{11})/,
+    /youtu\.be\/([A-Za-z0-9_-]{11})/,
+    /youtube\.com\/(?:live|embed|shorts)\/([A-Za-z0-9_-]{11})/,
+    /youtube-nocookie\.com\/embed\/([A-Za-z0-9_-]{11})/
+  ];
+  for(var i = 0; i < patterns.length; i++){
+    var m = s.match(patterns[i]);
+    if(m) return m[1];
+  }
+  if(/^[A-Za-z0-9_-]{11}$/.test(s)) return s;
+  return '';
+}
+function extractPlaylistId(url){
+  if(!url) return '';
+  var s = String(url).trim();
+  var m = s.match(/[?&]list=([A-Za-z0-9_-]+)/);
+  if(m) return m[1];
+  if(/^[A-Za-z0-9_-]{10,}$/.test(s) && !s.includes('://')) return s;
+  return '';
+}
+
+function playChannel(ch){
+  var url = ch.url || '';
+  var vid = extractVideoId(url);
+  var pid = extractPlaylistId(url);
+  var src = '';
+  var common = 'autoplay=1&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&fs=1';
+  if(pid && url.indexOf('list=') !== -1){
+    src = 'https://www.youtube-nocookie.com/embed/videoseries?list=' + encodeURIComponent(pid) + '&' + common;
+  } else if(vid){
+    src = 'https://www.youtube-nocookie.com/embed/' + vid + '?' + common;
+  } else {
+    toast('Invalid YouTube link', 'error');
+    return;
+  }
+  $('playerFrame').src = src;
+  $('playerTitle').textContent = ch.name;
+  $('player').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePlayer(){
+  $('player').classList.remove('open');
+  $('playerFrame').src = '';
+  document.body.style.overflow = '';
+}
+
+function openContextMenu(e, id){
+  var menu = $('ctxMenu');
+  var ch = state.channels.find(function(c){ return c.id === id; });
+  if(!ch) return;
+  menu.innerHTML =
+    '<button class="ctx-item" data-action="play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/></svg>Play</button>' +
+    '<button class="ctx-item" data-action="edit"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Edit</button>' +
+    '<button class="ctx-item danger" data-action="delete"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>Delete</button>';
+
+  var rect = e.currentTarget.getBoundingClientRect();
+  var top = Math.min(rect.bottom + 8, window.innerHeight - 180);
+  var left = Math.min(rect.right - 190, window.innerWidth - 210);
+  if(left < 10) left = 10;
+  menu.style.top = top + 'px';
+  menu.style.left = left + 'px';
+  menu.classList.add('open');
+
+  menu.querySelectorAll('.ctx-item').forEach(function(item){
+    item.addEventListener('click', function(){
+      var action = item.dataset.action;
+      menu.classList.remove('open');
+      if(action === 'play') playChannel(ch);
+      else if(action === 'edit') openChannelEditor(ch.id);
+      else if(action === 'delete') deleteChannel(ch.id);
+    });
+  });
+}
+document.addEventListener('click', function(e){
+  if(!e.target.closest('.ctx') && !e.target.closest('.card-btn')){
+    $('ctxMenu').classList.remove('open');
+  }
+});
+
+function openChannelEditor(id){
+  editingId = id;
+  uploadData = '';
+  if(id){
+    var ch = state.channels.find(function(c){ return c.id === id; });
+    if(!ch) return;
+    $('channelModalTitle').textContent = 'Edit channel';
+    $('chName').value = ch.name || '';
+    $('chUrl').value = ch.url || '';
+    $('chFolder').value = ch.folder || '';
+    if(ch.image){
+      uploadData = ch.image;
+      $('uploadPreview').src = ch.image;
+      $('uploadPreview').style.display = 'block';
+      $('uploadHint').style.display = 'none';
+      $('uploadZone').classList.add('has-image');
+    } else resetUploadZone();
+  } else {
+    $('channelModalTitle').textContent = 'New channel';
+    $('chName').value = '';
+    $('chUrl').value = '';
+    $('chFolder').value = state.currentFolder || '';
+    resetUploadZone();
+  }
+  openModal('channelModal');
+  setTimeout(function(){ $('chName').focus(); }, 220);
+}
+function resetUploadZone(){
+  uploadData = '';
+  $('uploadPreview').style.display = 'none';
+  $('uploadPreview').src = '';
+  $('uploadHint').style.display = 'block';
+  $('uploadZone').classList.remove('has-image');
+  $('chImage').value = '';
+}
+function saveChannel(){
+  var name = $('chName').value.trim();
+  var url = $('chUrl').value.trim();
+  var folder = $('chFolder').value.trim();
+  if(!name){ toast('Enter a name', 'error'); $('chName').focus(); return; }
+  if(!url){ toast('Enter a YouTube link', 'error'); $('chUrl').focus(); return; }
+  var vid = extractVideoId(url);
+  var pid = extractPlaylistId(url);
+  if(!vid && !pid){ toast('Invalid YouTube link', 'error'); return; }
+  if(editingId){
+    var ch = state.channels.find(function(c){ return c.id === editingId; });
+    if(ch){ ch.name = name; ch.url = url; ch.folder = folder; ch.image = uploadData; }
+    toast('Channel updated', 'success');
+  } else {
+    state.channels.push({ id: uid(), name: name, url: url, folder: folder, image: uploadData, created: Date.now() });
+    toast('Channel added', 'success');
+  }
+  save();
+  closeModal('channelModal');
+  render();
+}
+function deleteChannel(id){
+  if(!confirm('Delete this channel?')) return;
+  state.channels = state.channels.filter(function(c){ return c.id !== id; });
+  save(); render();
+  toast('Channel deleted', 'success');
+}
+
+function resizeImage(file, maxSize, cb){
+  var reader = new FileReader();
+  reader.onload = function(ev){
+    var img = new Image();
+    img.onload = function(){
+      var canvas = document.createElement('canvas');
+      var w = img.width, h = img.height;
+      if(w > h){ if(w > maxSize){ h = Math.round(h * maxSize / w); w = maxSize; } }
+      else { if(h > maxSize){ w = Math.round(w * maxSize / h); h = maxSize; } }
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      cb(canvas.toDataURL('image/jpeg', 0.82));
+    };
+    img.onerror = function(){ cb(''); };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function exportData(){
+  var payload = { app: 'Télé 88 Pro', version: 4, exported: new Date().toISOString(), channels: state.channels, theme: state.theme };
+  var blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'tele88pro_backup_' + new Date().toISOString().slice(0,10) + '.json';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  toast('Backup downloaded', 'success');
+}
+function importData(file){
+  var reader = new FileReader();
+  reader.onload = function(ev){
+    try {
+      var obj = JSON.parse(ev.target.result);
+      if(!obj || !Array.isArray(obj.channels)){ toast('Invalid file', 'error'); return; }
+      if(!confirm('Replace your ' + state.channels.length + ' channels with ' + obj.channels.length + '?')) return;
+      state.channels = obj.channels;
+      if(obj.theme === 'paper' || obj.theme === 'night') state.theme = obj.theme;
+      save(); applyTheme(); render();
+      toast(obj.channels.length + ' channels imported', 'success');
+    } catch(e){ toast('Failed to read file', 'error'); }
+  };
+  reader.readAsText(file);
+}
+
+$('themeBtn').addEventListener('click', toggleTheme);
+$('settingsBtn').addEventListener('click', function(){ openModal('settingsModal'); });
+document.querySelectorAll('[data-close]').forEach(function(btn){
+  btn.addEventListener('click', function(){ closeModal(btn.dataset.close); });
+});
+document.querySelectorAll('.overlay').forEach(function(ov){
+  ov.addEventListener('click', function(e){ if(e.target === ov) ov.classList.remove('open'); });
+});
+document.querySelectorAll('.theme-card').forEach(function(el){
+  el.addEventListener('click', function(){
+    state.theme = el.dataset.setTheme;
+    save(); applyTheme();
+  });
+});
+$('fabBtn').addEventListener('click', function(){ openChannelEditor(null); });
+$('saveChannelBtn').addEventListener('click', saveChannel);
+$('uploadZone').addEventListener('click', function(){ $('chImage').click(); });
+$('chImage').addEventListener('change', function(e){
+  var file = e.target.files[0];
+  if(!file) return;
+  if(file.size > 5 * 1024 * 1024){ toast('Image too large (max 5 MB)', 'error'); return; }
+  resizeImage(file, 400, function(dataUrl){
+    if(!dataUrl){ toast('Error', 'error'); return; }
+    uploadData = dataUrl;
+    $('uploadPreview').src = dataUrl;
+    $('uploadPreview').style.display = 'block';
+    $('uploadHint').style.display = 'none';
+    $('uploadZone').classList.add('has-image');
+  });
+});
+document.querySelectorAll('.view-btn').forEach(function(tab){
+  tab.addEventListener('click', function(){
+    state.view = tab.dataset.view;
+    state.currentFolder = null;
+    save();
+    document.querySelectorAll('.view-btn').forEach(function(t){ t.classList.toggle('active', t === tab); });
+    render();
+  });
+});
+
+var searchTimer;
+$('searchInput').addEventListener('input', function(){
+  var val = $('searchInput').value.trim();
+  $('searchClear').classList.toggle('show', !!val);
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(render, 100);
+});
+$('searchClear').addEventListener('click', function(){
+  $('searchInput').value = '';
+  $('searchClear').classList.remove('show');
+  $('searchInput').focus();
+  render();
+});
+
+function doYtSearch(){
+  var q = $('searchInput').value.trim();
+  if(!q){ $('searchInput').focus(); return; }
+  window.location.href = 'https://m.youtube.com/results?search_query=' + encodeURIComponent(q);
+}
+$('ytSearchBtn').addEventListener('click', doYtSearch);
+$('searchInput').addEventListener('keydown', function(e){
+  if(e.key === 'Enter'){ e.preventDefault(); doYtSearch(); }
+});
+
+$('playerClose').addEventListener('click', closePlayer);
+$('player').addEventListener('click', function(e){ if(e.target === $('player')) closePlayer(); });
+
+$('exportBtn').addEventListener('click', exportData);
+$('importBtn').addEventListener('click', function(){ $('importInput').click(); });
+$('importInput').addEventListener('change', function(e){
+  var file = e.target.files[0];
+  if(file) importData(file);
+  e.target.value = '';
+});
+$('clearAllBtn').addEventListener('click', function(){
+  if(!state.channels.length){ toast('Already empty', 'success'); return; }
+  if(!confirm('Delete ALL ' + state.channels.length + ' channels?\n\nThis cannot be undone.')) return;
+  state.channels = [];
+  save(); render();
+  toast('All channels cleared', 'success');
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    if($('player').classList.contains('open')){ closePlayer(); return; }
+    var open = document.querySelector('.overlay.open');
+    if(open) open.classList.remove('open');
+    $('ctxMenu').classList.remove('open');
+  }
+});
+
+load();
+applyTheme();
+render();
+document.querySelectorAll('.view-btn').forEach(function(t){
+  t.classList.toggle('active', t.dataset.view === state.view);
+});
+})();
+</script>
+</body>
+  </html>
