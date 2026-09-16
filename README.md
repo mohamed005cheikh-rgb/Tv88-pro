@@ -14,13 +14,13 @@ accounts, no tracking, no noise.
 ## Preview
 
 <p align="center">
-  <img src="assets/demo.gif" alt="Télé 88 demo" width="600">
+  <video src="assets/Promo.mp4" width="600" controls muted playsinline></video>
 </p>
 
 <p align="center">
-  <img src="assets/screenshot-paper.png" alt="Paper theme" width="45%">
-  &nbsp;&nbsp;
-  <img src="assets/screenshot-night.png" alt="Night theme" width="45%">
+  <img src="assets/Sc1.jpg" alt="Screenshot 1" width="32%">
+  <img src="assets/Sc2.jpg" alt="Screenshot 2" width="32%">
+  <img src="assets/Sc3.jpg" alt="Screenshot 3" width="32%">
 </p>
 
 ---
