@@ -14,15 +14,15 @@ accounts, no tracking, no noise.
 ## Preview
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/mohamed005cheikh-rgb/Tv88-pro/main/assets/Promo.mp4">
-    <img src="https://raw.githubusercontent.com/mohamed005cheikh-rgb/Tv88-pro/main/assets/Sc1.jpg" width="600" alt="Télé 88 — Watch demo">
+  <a href="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Promo.mp4">
+    <img src="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Sc1.jpg" width="600" alt="Télé 88 — Watch demo">
   </a>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mohamed005cheikh-rgb/Tv88-pro/main/assets/Sc1.jpg" width="32%" alt="Screenshot 1">
-  <img src="https://raw.githubusercontent.com/mohamed005cheikh-rgb/Tv88-pro/main/assets/Sc2.jpg" width="32%" alt="Screenshot 2">
-  <img src="https://raw.githubusercontent.com/mohamed005cheikh-rgb/Tv88-pro/main/assets/Sc3.jpg" width="32%" alt="Screenshot 3">
+  <img src="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Sc1.jpg" width="32%" alt="Screenshot 1">
+  <img src="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Sc2.jpg" width="32%" alt="Screenshot 2">
+  <img src="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Sc3.jpg" width="32%" alt="Screenshot 3">
 </p>
 
 ---
