@@ -14,7 +14,11 @@ accounts, no tracking, no noise.
 ## Demo
 
 <p align="center">
-  <img src="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/demo.gif" width="600" alt="Télé 88 demo">
+  <a href="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Promo.mp4">
+    <img src="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Sc1.jpg" width="600" alt="▶ Watch the demo">
+  </a>
+  <br>
+  <sub>▶ <a href="https://github.com/mohamed005cheikh-rgb/Tv88-pro/raw/main/Assets/Promo.gif">Click to watch the demo video</a></sub>
 </p>
 
 ---
