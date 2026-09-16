@@ -1,0 +1,81 @@
+# 📺 Télé 88
+
+**A personal TV library for the web.**
+
+Télé 88 lets you collect your favorite YouTube channels, playlists, and live
+streams in one clean, ad-free space. Everything stays on your device — no
+accounts, no tracking, no noise.
+
+🌐 **Live:** [mohamed005cheikh-rgb.github.io/Tv88-pro](https://mohamed005cheikh-rgb.github.io/Tv88-pro/)
+📦 **Releases:** [github.com/mohamed005cheikh-rgb/Tv88-pro/releases](https://github.com/mohamed005cheikh-rgb/Tv88-pro/releases)
+
+---
+
+## Preview
+
+<p align="center">
+  <img src="assets/demo.gif" alt="Télé 88 demo" width="600">
+</p>
+
+<p align="center">
+  <img src="assets/screenshot-paper.png" alt="Paper theme" width="45%">
+  &nbsp;&nbsp;
+  <img src="assets/screenshot-night.png" alt="Night theme" width="45%">
+</p>
+
+---
+
+## What it does
+
+- **Add anything from YouTube** — videos, live streams, or full playlists
+- **Organize with folders** — or leave your library flat, your choice
+- **Search as you type** — find a channel in seconds
+- **Custom covers** — give every channel its own image
+- **Two themes** — Paper (light) and Night (dark)
+- **Export & import** — back up your library as a JSON file
+- **Runs anywhere** — phone, tablet, laptop, desktop
+
+---
+
+## How to use it
+
+1. Open the site on any device
+2. Tap **➕** to add a YouTube link
+3. Give it a name, choose a cover, save
+4. Tap the card to watch
+
+No setup. No installation. No account.
+
+---
+
+## Android app
+
+An **optional APK** is available for those who prefer a native install —
+better for sharing with family or using offline-first.
+
+📥 **Download:** [Latest release](https://github.com/mohamed005cheikh-rgb/Tv88-pro/releases/latest)
+
+> 💡 **iPhone users:** just use the web version and add it to your home
+> screen. It behaves like an app, without the App Store.
+
+---
+
+## Your data, your rules
+
+- ❌ No tracking
+- ❌ No analytics
+- ❌ No servers
+- ✅ Everything stored locally on your device
+- ✅ Export anytime, restore anywhere
+
+---
+
+## Support
+
+Bug reports, ideas, questions — reach out anytime:
+
+💬 **WhatsApp:** [+222 30 72 64 75](https://wa.me/22230726475)
+
+---
+
+**© MC88** · Télé 88 · All rights reserved
